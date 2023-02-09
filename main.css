@@ -6,8 +6,8 @@ body {
 }
 
 #app-container {
-  position: absolute;
-  width: 1000px;
+  position: relative;
+  width: 100%;
   height: 97%;
   background-color: black;
   display: flex;
@@ -46,15 +46,38 @@ body {
   padding: 10px;
   width: 100%;
   height: 80%;
+  align-items: flex-start;
 }
 
 #user-profile-container {
   height: 90%;
-  margin-left: 25px;
-  width: 200px;
+  margin-left: 2%;
+  margin-right: 2%;
+  width: 20%;
+  flex-basis: 25%;
 }
 
 #repo-container, #form-container {
-  width: 700px;
+  width: 60%;
   flex-basis: 40%;
+  display: flex;
+  align-self: flex-end;
+  margin-right: 10%;
+}
+
+#form-container {
+  margin-top: 0.5%;
+}
+
+#pinned-repo-display {
+  background: grey;
+  display: flex;
+  flex-direction: column;
+}
+
+#pinned-repos {
+  border: solid 2px white;
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 10px;
 }
