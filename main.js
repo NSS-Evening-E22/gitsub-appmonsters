@@ -15,6 +15,12 @@ const navBarOnDom = () => {
 </div>`
 renderToDom("#nav-bar-container", navString);
 };
+// create the user profile sidebar
+const SideBarOnDom = () => {
+  let UserString =`<div>
+  </div>`
+rendertoDom('#user-profile-container', UserString)
+}
 
 //making form
 const formOnDom = () => {
