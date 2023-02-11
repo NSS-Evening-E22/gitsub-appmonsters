@@ -19,7 +19,23 @@ renderToDom("#nav-bar-container", navString);
 };
 // create the user profile sidebar
 const SideBarOnDom = () => {
-  let UserString =`<div>
+  let UserString =`<div id="user-card">
+  <img src="https://i.pinimg.com/originals/60/77/a5/6077a52e5c0612822bfb217c0a1ca817.jpg">
+  <h1 class="profile-names">
+  <span class="real-name">Caeser Droll</span>
+  <span class="user-name">drzaiusfailure</span>
+  </h1>
+  <div id="user-bio">
+  <p class="staus-text">Apes togther sad</p></div>
+  <button class=profile-btn>Edit Profile</button>
+  </div>
+  <div id="achieve-box">
+  <h2>Achievements</h2>
+  </div>
+  <div id="org-box">
+  <h2>Organization</h2>
+  <img src="">
+  <img src="">
   </div>`
 renderToDom('#user-profile-container', UserString)
 }

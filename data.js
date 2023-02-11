@@ -25,4 +25,10 @@ export const gitHubProjects = [
 },
 ];
 
+<<<<<<< HEAD
 export let pinnedGitHubProjects = [];
+=======
+//export const pinnedGitHubProjects = [];
+
+export const proPix = [];
+>>>>>>> f3f73433b765872aae97ebbe54378e710b9d3fd3
