@@ -1,5 +1,4 @@
 import { gitHubProjects } from "./data.js";
-import { pinnedGitHubProjects } from "/data.js";
 
 const renderToDom = (divId, htmlToRender) => {
     const selectedDiv = document.querySelector(divId);
@@ -56,6 +55,7 @@ const formOnDom = () => {
   }
 
 const pinnedProjectsOnDom = () => {
+  const pinnedGitHubProjects = [];
   const filterProjects = () => {
     for (const project of gitHubProjects) {
       if (project.isFavorited === true) {
