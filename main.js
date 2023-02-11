@@ -202,7 +202,7 @@ const newProjectObj = {
     navBarOnDom();
     formOnDom();
     sideBarOnDom();
-    //pinnedProjectsOnDom();
+    pinnedProjectsOnDom();
     footerOnDom();
   };
 
