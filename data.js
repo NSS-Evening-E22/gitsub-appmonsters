@@ -25,4 +25,6 @@ export const gitHubProjects = [
 },
 ];
 
-//export const pinnedGitHubProjects = [];
+export const pinnedGitHubProjects = [];
+
+export const gitHubRepo = [];

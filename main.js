@@ -1,5 +1,5 @@
-import { gitHubProjects } from "./data.js";
-//import { pinnedGitHubProjects } from "/data.js";
+import { gitHubProjects, gitHubRepo } from "./data.js";
+import { pinnedGitHubProjects } from "/data.js";
 
 console.log (gitHubProjects);
 
@@ -36,11 +36,56 @@ const formOnDom = () => {
     <input type="text" class="form-control" id="inputDescription" placeholder="Project Description">
   </form>
   </div>
-  <button id="btnSubmitRepo" class="btn btn-primary">Submit</button>`;
+  <button id="btnSubmitProject" class="btn btn-primary">Submit</button>`;
   
   renderToDom('#form-container', headerOnDom);
   }
-  const startApp =() => {
+
+  // create repo form
+  const repoFormOnDom = () => {
+    const repoString = `<form>
+    <h1>Create New Repositories</h1>
+    <label class="sr-only">Repositories Title: </label>
+    <input type="text" class="form-control" id="inputRepoTitle" placeholder="Title of Repo">
+    <label class="sr-only">Repositories Descripton: </label>
+    <input type="text" class="form-control" id="inputRepoDescription" placeholder="Repositories Description">
+  </form>
+  </div>
+  <button id="btnSubmitRepo" class="btn btn-primary">Create Repo</button>`;
+  
+  renderToDom('#form-container', repoString);
+  }
+
+  //function to add projects to dom
+  const newProject = (e) => {
+    e.preventDefault();
+  
+const newProjectObj = {
+    id: gitHubProjects.length + 1,
+    name: document.querySelector('#inputTitle').value,
+    description: document.querySelector('#inputDescription').value,
+  }
+  gitHubProjects.push(newProjectObj);
+  projectOnDom(gitHubProjects);
+  form.reset();
+  };
+
+  //function to add new repos on dom
+  const newRepo = (e) => {
+    e.preventDefault();
+  const newRepoObj = {
+      id: gitHubRepo.length + 1,
+      name: document.querySelector('#inputRepoTitle').value,
+      description: document.querySelector('#inputRepoDescription').value,
+    }
+    gitHubRepo.push(newRepoObj);
+    repoOnDom(gitHubRepo);
+    form.reset();
+    };
+
+  
+
+  const startApp = () => {
     formOnDom()
     navBarOnDom()
   };
