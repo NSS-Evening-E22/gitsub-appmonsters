@@ -1,13 +1,12 @@
 import { gitHubProjects, gitHubRepo } from "./data.js";
-import { pinnedGitHubProjects } from "/data.js";
 
-console.log (gitHubProjects);
+console.log(gitHubProjects);
 
 const renderToDom = (divId, htmlToRender) => {
-    const selectedDiv = document.querySelector(divId);
-  
-    selectedDiv.innerHTML = htmlToRender; 
-  };
+  const selectedDiv = document.querySelector(divId);
+
+  selectedDiv.innerHTML = htmlToRender;
+};
 
 // created navBar html function
 const navBarOnDom = () => {
@@ -16,11 +15,44 @@ const navBarOnDom = () => {
   <button class="btn btn-primary" id="repBtn">Repositories</button>
   <button class="btn btn-primary" id="projBtn">Projects</button>
   <button class="btn btn-primary" id="pkgBtn">Packages</button>
-</div>`
-renderToDom("#nav-bar-container", navString);
+  </div>`;
+  renderToDom("#nav-bar-container", navString);
+
+  // created variables for button functions
+  const showOverviewPage = document.querySelector("#ovrBtn");
+  const showRepoPage = document.querySelector("#repBtn");
+  const showProjPage = document.querySelector("#projBtn");
+  const showPkgPage = document.querySelector("#pkgBtn");
+
+  // created button functions
+  showOverviewPage.addEventListener("click", () => {
+    sideBarOnDom();
+    pinnedProjectsOnDom();
+    formOnDom();
+    footerOnDom();
+  });
+
+  showRepoPage.addEventListener("click", () => {
+    sideBarOnDom();
+    pinnedProjectsOnDom();
+    repoFormOnDom();
+    footerOnDom();
+  });
+
+  showProjPage.addEventListener("click", () => {
+    sideBarOnDom();
+    formOnDom();
+    footerOnDom();
+  });
+
+  showPkgPage.addEventListener("click", () => {
+    sideBarOnDom();
+    formOnDom();
+    footerOnDom();
+  });
 };
 // create the user profile sidebar
-const SideBarOnDom = () => {
+const sideBarOnDom = () => {
   let UserString =`<div id="user-card">
   <img src="https://i.pinimg.com/originals/60/77/a5/6077a52e5c0612822bfb217c0a1ca817.jpg">
   <h1 class="profile-names">
@@ -38,13 +70,13 @@ const SideBarOnDom = () => {
   <h2>Organization</h2>
   <img src="">
   <img src="">
-  </div>`
+  </div>`;
 renderToDom('#user-profile-container', UserString)
-}
+};
 
 //making form
 const formOnDom = () => {
-    const headerOnDom = `<form>
+  const headerOnDom = `<form>
     <h1>Create New Project</h1>
     <label class="sr-only">Project Title: </label>
     <input type="text" class="form-control" id="inputTitle" placeholder="Title of Project">
@@ -56,6 +88,30 @@ const formOnDom = () => {
   
   renderToDom('#form-container', headerOnDom);
   }
+
+const pinnedProjectsOnDom = () => {
+  const pinnedGitHubProjects = [];
+  const filterProjects = () => {
+    for (const project of gitHubProjects) {
+      if (project.isFavorited === true) {
+        pinnedGitHubProjects.push(project);
+      }
+    }
+  }
+  filterProjects();
+  let domString = "";
+  for (const project of pinnedGitHubProjects) {
+    domString += `<div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">${project.name}</h5>
+      <h6 class="card-subtitle mb-2 text-muted">${project.language}</h6>
+      <p class="card-text">${project.description}</p>
+    </div>
+  </div>`
+  }
+  renderToDom('#repo-container', domString);
+}
+
 
   // create repo form
   const repoFormOnDom = () => {
@@ -144,9 +200,11 @@ const newProjectObj = {
   
 
   const startApp = () => {
-    formOnDom()
-    navBarOnDom()
+    navBarOnDom();
+    formOnDom();
+    sideBarOnDom();
+    //pinnedProjectsOnDom();
     footerOnDom();
   };
 
-  startApp();
+startApp();
