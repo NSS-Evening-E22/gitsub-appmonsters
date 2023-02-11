@@ -1,5 +1,5 @@
 console.log("linked!");
-const rendertoDom = (divId, htmlToRender) => {
+const renderToDom = (divId, htmlToRender) => {
     const selectedDiv = document.querySelector(divId);
   
     selectedDiv.innerHTML = htmlToRender; 
@@ -19,7 +19,7 @@ renderToDom("#nav-bar-container", navString);
 const SideBarOnDom = () => {
   let UserString =`<div>
   </div>`
-rendertoDom('#user-profile-container', UserString)
+renderToDom('#user-profile-container', UserString)
 }
 
 //making form
@@ -34,7 +34,7 @@ const formOnDom = () => {
   </div>
   <button id="btnSubmitRepo" class="btn btn-primary">Submit</button>`;
   
-  rendertoDom('#form-container', headerOnDom);
+  renderToDom('#form-container', headerOnDom);
   }
   const startApp =() => {
     formOnDom()
