@@ -1,4 +1,4 @@
-const gitHubProjects = [
+export const gitHubProjects = [
   {
       id: 1,
       name: "First project",
@@ -25,4 +25,4 @@ const gitHubProjects = [
 },
 ];
 
-const pinnedGitHubProjects = [];
+//export const pinnedGitHubProjects = [];

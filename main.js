@@ -1,5 +1,7 @@
-import {gitHubProjects} from "./data.js";
-import {pinnedGitHubProjects} from "./data.js";
+import { gitHubProjects } from "./data.js";
+//import { pinnedGitHubProjects } from "/data.js";
+
+console.log (gitHubProjects);
 
 const renderToDom = (divId, htmlToRender) => {
     const selectedDiv = document.querySelector(divId);
