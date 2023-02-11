@@ -58,3 +58,12 @@ body {
   width: 700px;
   flex-basis: 40%;
 }
+
+#repo-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.card {
+  color: black;
+}

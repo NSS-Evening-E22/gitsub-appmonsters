@@ -1,7 +1,5 @@
 import { gitHubProjects } from "./data.js";
-//import { pinnedGitHubProjects } from "/data.js";
-
-console.log (gitHubProjects);
+import { pinnedGitHubProjects } from "/data.js";
 
 const renderToDom = (divId, htmlToRender) => {
     const selectedDiv = document.querySelector(divId);
@@ -40,9 +38,35 @@ const formOnDom = () => {
   
   renderToDom('#form-container', headerOnDom);
   }
+
+const pinnedProjectsOnDom = () => {
+  const filterProjects = () => {
+    for (const project of gitHubProjects) {
+      if (project.isFavorited === true) {
+        pinnedGitHubProjects.push(project);
+      }
+    }
+  }
+  filterProjects();
+  let domString = "";
+  for (const project of pinnedGitHubProjects) {
+    domString += `<div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <h6 class="card-subtitle mb-2 text-muted">${project.name}</h6>
+      <p class="card-text">${project.description}</p>
+      <p class="card-link">Javascript</p>
+      <p class="card-link">Another link</p>
+    </div>
+  </div>`
+  }
+  renderToDom('#repo-container', domString);
+}
+
   const startApp =() => {
     formOnDom()
     navBarOnDom()
+    pinnedProjectsOnDom()
   };
 
   startApp();
