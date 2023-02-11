@@ -74,6 +74,7 @@ body {
   height: 150px;
   width: 250px;
 }
+
 #repo-container, #form-container {
   width: 700px;
   flex-basis: 40%;
@@ -81,6 +82,7 @@ body {
 
 #repo-container {
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
 }
 
