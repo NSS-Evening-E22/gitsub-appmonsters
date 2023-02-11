@@ -78,3 +78,7 @@ body {
   width: 700px;
   flex-basis: 40%;
 }
+
+.nav-item {
+font-size: 10px;
+}
