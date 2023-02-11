@@ -24,5 +24,8 @@ export const gitHubProjects = [
   lastUpdated: "12 hours ago"
 },
 ];
+export const pinnedGitHubProjects = [];
+
+export const gitHubRepo = [];
 
 export const proPix = [];
