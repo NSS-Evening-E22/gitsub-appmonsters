@@ -89,3 +89,7 @@ body {
 .card {
   color: black;
 }
+
+.nav-item {
+font-size: 10px;
+}
