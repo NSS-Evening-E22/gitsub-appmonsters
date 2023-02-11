@@ -1,4 +1,6 @@
-console.log("linked!");
+import {gitHubProjects} from "./data.js";
+import {pinnedGitHubProjects} from "./data.js";
+
 const renderToDom = (divId, htmlToRender) => {
     const selectedDiv = document.querySelector(divId);
   
