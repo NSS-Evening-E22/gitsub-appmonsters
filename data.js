@@ -26,3 +26,5 @@ export const gitHubProjects = [
 ];
 
 //export const pinnedGitHubProjects = [];
+
+export const proPix = [];
