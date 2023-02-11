@@ -112,7 +112,6 @@ const pinnedProjectsOnDom = () => {
   renderToDom('#repo-container', domString);
 }
 
-
   // create repo form
   const repoFormOnDom = () => {
     const repoString = `<form>
