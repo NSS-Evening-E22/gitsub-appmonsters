@@ -7,7 +7,7 @@ body {
 
 #app-container {
   position: absolute;
-  width: 1000px;
+  width: 1500px;
   height: 97%;
   background-color: black;
   display: flex;
@@ -53,26 +53,42 @@ body {
   margin-left: 25px;
   width: 296px;
   height: 790px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
  #user-card{
   height: 340px;
   width: 250px;
+  flex: content;
+  
  }
-
+ .real-name{
+  font-family: Arial,sans-serif;
+}
+.user-name{
+  font-family: Arial,sans-serif;
+  font-size: medium;
+  background-color:skyblue ;
+}
 #user-bio{
   height: 150px;
   width: 250px;
+  flex: auto;
 }
 
 #achieve-box{
   height: 150px;
   width: 250px;
+  flex: auto;
 }
 
 #org-box{
   height: 150px;
   width: 250px;
+  flex: auto;
 }
 
 #repo-container, #form-container {

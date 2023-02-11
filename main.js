@@ -54,10 +54,12 @@ const navBarOnDom = () => {
 // create the user profile sidebar
 const sideBarOnDom = () => {
   let UserString =`<div id="user-card">
-  <img src="https://i.pinimg.com/originals/60/77/a5/6077a52e5c0612822bfb217c0a1ca817.jpg">
+  <img src="https://i.pinimg.com/originals/60/77/a5/6077a52e5c0612822bfb217c0a1ca817.jpg"
+  height="150"
+  width="250">
   <h1 class="profile-names">
   <span class="real-name">Caeser Droll</span>
-  <span class="user-name">drzaiusfailure</span>
+  <span class="user-name" style="">@drzaiusfailure</span>
   </h1>
   <div id="user-bio">
   <p class="staus-text">Apes togther sad</p></div>
